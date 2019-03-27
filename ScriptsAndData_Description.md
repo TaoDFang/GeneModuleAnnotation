@@ -35,6 +35,7 @@ regression_selected_pathways_funcs.R  is  used to write a function to use the mo
 
 
 
+DreamChallenge_website and DreamChallenge folder in local computer is used to build a website to use our results on DreamChallenge data. DreamChallenge_website is original folder and DreamChallenge is a cleaned folders uploaded to Github.
 
 
 
