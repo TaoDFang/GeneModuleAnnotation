@@ -19,7 +19,28 @@ reactome_preprocess_tree.R is used for reactome data preprocess and tree functio
 
 Gene_pathway_matrix.R is used to construct gene pathway matrix and get raw go gene list(raw_go_list.rda)
 
-“Module_Identification_GO_REA_PPI_STRING_test.R” is used to test model on DreamChallenge PPT-STRING_Consensus networks
+“Module_Identification_GO_REA_PPI_STRING_test.R” is used to test model on DreamChallenge PPT-STRING_Consensus networks,
+which will generate html fils whose format are specified in https://drive.google.com/drive/folders/1tuFt83ot_P2kTb9vPkH1bbL0Oo08rBdZ and a txt file contains all annotation results
+
+Module_Identification_GO_REA_PPI_STRING_test_onlyTxtfile.R is used if you only want get some results in txt file format
+
+
+Module_Identification_suplementary_figures.R is used to draw supplementary figures as described in :https://drive.google.com/drive/folders/1tuFt83ot_P2kTb9vPkH1bbL0Oo08rBdZ   or  https://docs.google.com/document/d/1w-RcyMFWbx3fictyHthqdfu2sDgf0pvdnb0H-Z_5iNY/edit#
+Module_Identification_suplementary_figures_sup.R  is used to save some old code for Module_Identification_suplementary_figures.R script
+
+regression_selected_pathways_funcs.R  is  used to write a function to use the model
+
+
+“Module_Identification_funcs.R”  is used to store all the supplementary  functions for module identification project
+
+
+
+
+
+
+
+
+
 
 
 4. “Module_Identification_GO_REA_UNI_2rd.R” is used to test new model. I.e. map to hierarchical trees and draw heatmap of modules for reactome terms

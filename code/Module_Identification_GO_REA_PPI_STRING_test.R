@@ -13,8 +13,18 @@ library(RColorBrewer)
 library(ribiosPlot)
 library(R2HTML)
 #setwd("/media/sf_sharded_ubuntu/Disease_module_identification_DREAM_change")
-setwd("/pstore/home/fangt3/Disease_module_identification_DREAM_change")
-source("Module_Identification_funcs.R")
+
+# set the workplace, mainly to use some preprocessed data
+setwd("~/Documents/DreamChallengeModuleAnnotation/HPC_Disease_module_identification_DREAM_change/")
+
+## set path to R scripts
+script_path="~/Documents/DreamChallengeModuleAnnotation/GeneModuleAnnotation/code/"
+
+## set path to laterest results
+result_path="~/Documents/DreamChallengeModuleAnnotation/Results/"
+
+
+source(paste(script_path,"Module_Identification_funcs.R",sep = ""))
 
 # get root nodes from hierarchical tree
 go_ontology <- readRDS("go_ontology.rds")
@@ -213,7 +223,7 @@ for(net_index in 1:1){
         pathway2gene_p=pathway2gene_plot_new(gene_pathway_matrix,selected_coef,selected_pathways,selected_pathway_names,selected_pathways_num_genes,module_common_genes)
         
        
-        ggsave(paste("HTML_results/",module_name,"_pathway2gene.PNG",sep=""),  width =20 ,height =3.5, 
+        ggsave(paste(paste(result_path,"/HTML_results/",sep = ""),module_name,"_pathway2gene.PNG",sep=""),  width =20 ,height =3.5, 
                plot = pathway2gene_p)
         
       }
@@ -242,7 +252,7 @@ for(net_index in 1:1){
     #gene_links=sapply(1:length(gene_urls), function(i){paste("<a href=\"",gene_urls[i],"\">",module_genes_metaInfo[,"Module Gene Symbol"][i],"</a></p>",sep = "")})
     module_genes_metaInfo[,"Gene ID"]=gene_links  
     
-    HTMLStart(outdir="./HTML_results/", file=module_name,
+    HTMLStart(outdir=paste(result_path,"/HTML_results/",sep = ""), file=module_name,
               extension="html", echo=FALSE,HTMLframe = FALSE,CSSFile = "R2HTML_tao.css")
     #[PPI-STRING_Consensus_mod1](./htmls/PPI-STRING_Consensus_mod1.html)
     # #<a href="./htmls/PPI-STRING_Consensus_mod347.html">PPI-STRING_Consensus_mod347</a><br />
@@ -275,7 +285,7 @@ for(net_index in 1:1){
       
       
       HTML.title("Gene membership", HR=3,CSSFile = "R2HTML_tao.css")
-      HTMLInsertGraph(paste(module_name,"_pathway2gene.PNG",sep=""),file =paste("./HTML_results/",module_name,".html",sep = "") ,
+      HTMLInsertGraph(paste(module_name,"_pathway2gene.PNG",sep=""),file =paste(paste(result_path,"/HTML_results/",sep = ""),module_name,".html",sep = "") ,
                       WidthHTML =1200 )
     }else{
       
@@ -379,5 +389,5 @@ for(net_index in 1:1){
   
 }
 
-write.csv(dream_consensus_modules_results, file = "dream_consensus_modules_results_alpha0.5.csv",
+write.csv(dream_consensus_modules_results, file = paste(result_path,"dream_consensus_modules_results_alpha0.5.csv",sep = ""),
           row.names=FALSE, col.names = TRUE)
