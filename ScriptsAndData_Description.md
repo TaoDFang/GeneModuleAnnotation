@@ -24,6 +24,8 @@ which will generate html fils whose format are specified in https://drive.google
 
 Module_Identification_GO_REA_PPI_STRING_test_onlyTxtfile.R is used if you only want get some results in txt file format
 
+Module_Identification_GO_REA_PPI_STRING_test_onlyTxtfile_forDanielsPaper.R is used to get txt file format for Daniel's paper
+
 
 Module_Identification_suplementary_figures.R is used to draw supplementary figures as described in :https://drive.google.com/drive/folders/1tuFt83ot_P2kTb9vPkH1bbL0Oo08rBdZ   or  https://docs.google.com/document/d/1w-RcyMFWbx3fictyHthqdfu2sDgf0pvdnb0H-Z_5iNY/edit#
 Module_Identification_suplementary_figures_sup.R  is used to save some old code for Module_Identification_suplementary_figures.R script

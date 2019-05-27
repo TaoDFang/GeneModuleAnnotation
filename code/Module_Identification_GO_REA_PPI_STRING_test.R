@@ -391,3 +391,10 @@ for(net_index in 1:1){
 
 write.csv(dream_consensus_modules_results, file = paste(result_path,"dream_consensus_modules_results_alpha0.5.csv",sep = ""),
           row.names=FALSE, col.names = TRUE)
+
+a=read.csv(file = paste(result_path,"dream_consensus_modules_results_alpha0.5.csv",sep = ""))
+b=a[,1:5]
+
+write.csv(b, file = paste(result_path,"dream_consensus_modules_results_alpha0.5_simplified.csv",sep = ""),
+          row.names=FALSE, col.names = TRUE)
+
